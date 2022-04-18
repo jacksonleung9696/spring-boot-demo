@@ -36,13 +36,13 @@ public class TestController {
     }
 
     /**
-     *  测试post json方法
+     * 测试post json方法
+     *
      * @param map 请求的json参数
      * @return {@link Dict}
      */
     @PostMapping("/testJson")
     public Dict testJson(@RequestBody Map<String, Object> map) {
-
         final String jsonStr = JSONUtil.toJsonStr(map);
         log.info(jsonStr);
         return Dict.create().set("json", map);
